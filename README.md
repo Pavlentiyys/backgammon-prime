@@ -4,16 +4,10 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Supabase](https://img.shields.io/badge/Supabase-Backend%20as%20a%20Service-green?style=for-the-badge&logo=supabase)](https://supabase.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge&logo=git)](LICENSE)
 
 ![Backgammon Prime Banner](public/landing/hero.png)
 
 > **Backgammon Prime** — современная веб-платформа для игры в **длинные нарды** с AI-коучем, мультиплеером реального времени, асинхронными партиями и развитым социальным слоем. Проект ориентирован на рынки СНГ, Турции, Центральной Азии и MENA, заполняя пустующую нишу качественных цифровых длинных нард. Отличие данного проекта по сравнению с другими, заключается в атмосфере. Данный проект пропитан восточной тематикой, в качестве обучения используется сюжет после прохождения которого можно спокойно освоиться в игре в нарды. По сравнению с другими проектами со сложными UX дизайном, данный проект хорошо подойдет для главной целевой аудитории людей играющих в нарды.
-
----
-
-## 🚀 Уникальное ценностное предложение (UVP)
-*«Аналог Backgammon Galaxy для длинных нард — с умным AI-коучем на родном языке, современным UX, глубоким анализом партий и асинхронным режимом для играющих взрослых».*
 
 ---
 
