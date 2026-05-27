@@ -1,0 +1,19 @@
+{
+  "site": {
+    "tagline": "Long backgammon. Online.",
+    "subtitle": "Play against a bot, friends via a link, or opponents from around the world. AI game review, ELO rating, city leaderboards.",
+    "cta_bot": "Local game",
+    "cta_room": "Online game"
+  },
+  "nav": {
+    "play": "Play",
+    "leaderboard": "Leaderboard",
+    "pro": "Pro",
+    "sign_in": "Sign in"
+  },
+  "features": {
+    "coach": { "t": "AI coach", "d": "Post-game review in your language." },
+    "async": { "t": "Async games", "d": "24h per move — play when convenient." },
+    "elo": { "t": "ELO + cities", "d": "Compete in your city and country." }
+  }
+}

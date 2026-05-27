@@ -1,0 +1,19 @@
+{
+  "site": {
+    "tagline": "Uzun nərd. Onlayn.",
+    "subtitle": "Bota qarşı, dostlarla link vasitəsilə və ya dünyanın hər yerindən rəqiblərlə oyna. AI oyun təhlili, ELO reytinqi, şəhər liderlik cədvəlləri.",
+    "cta_bot": "Yerli oyun",
+    "cta_room": "Onlayn oyun"
+  },
+  "nav": {
+    "play": "Oyna",
+    "leaderboard": "Liderlik",
+    "pro": "Pro",
+    "sign_in": "Daxil ol"
+  },
+  "features": {
+    "coach": { "t": "AI məşqçi", "d": "Hər oyundan sonra dilində təhlil." },
+    "async": { "t": "Async oyunlar", "d": "Hər gediş üçün 24 saat." },
+    "elo": { "t": "ELO + şəhərlər", "d": "Şəhərində və ölkəndə yarış." }
+  }
+}

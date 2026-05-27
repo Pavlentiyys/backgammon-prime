@@ -1,0 +1,19 @@
+{
+  "site": {
+    "tagline": "Uzun tavla. Çevrimiçi.",
+    "subtitle": "Bota karşı, link ile arkadaşlarla veya dünyanın her yerinden rakiplerle oyna. AI oyun analizi, ELO sıralaması, şehir liderlik tabloları.",
+    "cta_bot": "Yerel oyun",
+    "cta_room": "Çevrimiçi oyun"
+  },
+  "nav": {
+    "play": "Oyna",
+    "leaderboard": "Liderlik",
+    "pro": "Pro",
+    "sign_in": "Giriş"
+  },
+  "features": {
+    "coach": { "t": "AI koç", "d": "Her oyundan sonra dilinde analiz." },
+    "async": { "t": "Async oyunlar", "d": "Hamle başına 24 saat." },
+    "elo": { "t": "ELO + şehirler", "d": "Şehrinde ve ülkende yarış." }
+  }
+}

@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4ecd8;
+  --foreground: #1a1410;
+  --board-bg: #d8b88a;
+  --board-frame: #4a2e16;
+  --point-light: #e8d3a8;
+  --point-dark: #7a4521;
+  --checker-white: #f5ebd6;
+  --checker-white-stroke: #8b6f3a;
+  --checker-black: #2a1810;
+  --checker-black-stroke: #5c3818;
+  --accent: #c8973e;
+  --muted: #b8a382;
+}
+
+.dark {
+  --background: #14110d;
+  --foreground: #ebdfc7;
+  --board-bg: #3a2818;
+  --board-frame: #1a0e06;
+  --point-light: #6b4a26;
+  --point-dark: #2a1810;
+  --checker-white: #e8d8b0;
+  --checker-white-stroke: #b89860;
+  --checker-black: #0d0805;
+  --checker-black-stroke: #3a2818;
+  --accent: #d4a04a;
+  --muted: #5c4a32;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-board-bg: var(--board-bg);
+  --color-board-frame: var(--board-frame);
+  --color-point-light: var(--point-light);
+  --color-point-dark: var(--point-dark);
+  --color-checker-white: var(--checker-white);
+  --color-checker-black: var(--checker-black);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-fraunces);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
 }
