@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Backgammon Prime (рабочее название)
 
-## Getting Started
+![Backgammon Prime Banner](public/landing/hero.png)
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-14%20(App%20Router)-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-Backend%20as%20a%20Service-green?style=for-the-badge&logo=supabase)](https://supabase.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge&logo=git)](LICENSE)
 
+> **Backgammon Prime** — современная веб-платформа для игры в **длинные нарды** с AI-коучем, мультиплеером реального времени, асинхронными партиями и развитым социальным слоем. Проект ориентирован на рынки СНГ, Турции, Центральной Азии и MENA, заполняя пустующую нишу качественных цифровых длинных нард.
+
+---
+
+## 🚀 Уникальное ценностное предложение (UVP)
+*«Аналог Backgammon Galaxy для длинных нард — с умным Claude-коучем на родном языке, современным UX, глубоким анализом партий и асинхронным режимом для играющих взрослых».*
+
+---
+
+## 🛠️ Технологический стек
+
+- **Frontend:** Next.js 14 (App Router), React, Tailwind CSS, Radix UI, TypeScript, Sharp.
+- **Backend / Database:** Supabase (PostgreSQL), функции на PL/pgSQL, триггеры авторизации, Row Level Security (RLS).
+- **Realtime / Сеть:** Supabase Realtime (для мультиплеерных комнат и синхронизации ходов).
+- **Тестирование и Качество:** Jest / Vitest (48+ полностью успешно пройденных юнит-тестов ядра и логики).
+- **Инфраструктура:** Изолированные миграции БД (структура `supabase/migrations/`).
+
+---
+
+## ✨ Реализованный функционал (MVP статус)
+
+### 1. Игровой движок (Core Engine)
+- Изолированный TypeScript-модуль с чистыми функциями.
+- Полная поддержка специфических правил длинных нард: *«Правило головы»* (включая обработку первого дубля), *«Запрет полного блока»* (если он не оставляет сопернику легальных ходов), подсчет **Pip count**.
+- Определение типов победы: обычная, **Марс (×1.5 ELO)** и **Кокс (×2 ELO)**.
+
+### 2. Режимы игры
+- **Игра против Бота:** три уровня сложности на базе алгоритма *Expectimax*. Локальный обсчет ходов (UI не блокируется), автоматическое сохранение результатов партии в БД.
+- **Hot-seat:** игра для двоих на одном экране с поддержкой drag-and-drop, tap-to-move и возможностью отмены полуходов (Undo) до подтверждения.
+- **Мультиплеер (Real-time):** создание приватных комнат, игра по инвайт-ссылкам без обязательной регистрации (в режиме Гостя).
+
+### 3. Профили и Кастомизация
+- **Система аватаров:** встроенный селектор готовых пресетов в настройках (`/me/edit`) и динамический выбор аватара игрока на основе пола (`male` / `female` / `unspecified`) для гостей и новых пользователей.
+- **Интеграция Туториала:** пошаговое интерактивное обучение с сюжетными комикс-сценами (`/tutorial/scene-*.png`), включая полноценную интеграцию персонажей (Дед, Внук).
+
+### 4. Социальный слой и Рейтинги
+- **Рейтинг ELO:** полноценный математический расчет дельты рейтинга после онлайн-партий по формуле с учетом коэффициентов победы. Рейтинг застрахован от падения ниже 100 пунктов.
+- **Лидерборд:** глобальная таблица лидеров с поддержкой аватаров, ссылок на профили реальных игроков и **системой сидирования ботов** (20 ботов с низким ELO от 720 до 1090 для визуального оживления платформы на старте).
+- **Интерфейс:** в правый угол лендинга интегрированы переключатели темы (ThemeToggle) и локализации (LocaleSwitcher).
+
+---
+
+## 🗺️ Текущая структура базы данных (Supabase)
+
+Проект использует строго структурированные и атомарные SQL-миграции:
+- `0005_profiles_gender.sql` — расширение профилей полем `gender` с констреинтами.
+- `0006_handle_new_user_gender.sql` — триггер автоматического маппинга метаданных авторизации (включая пол и никнейм) в публичные профили.
+- `0007_profiles_bot_seed.sql` — снятие ограничений внешнего ключа для системных профилей, внедрение флага `is_bot` и сидирование 20 ботов-новичков для демонстрационного лидерборда.
+
+---
+
+## 🏃‍♂️ Быстрый запуск
+
+### 1. Установка зависимостей
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+yarn install
+# или
+npm install
